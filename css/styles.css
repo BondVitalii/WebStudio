@@ -1,0 +1,138 @@
+/*__________ Variable styles __________*/
+:root {
+  /* Fonts */
+  --primary-fonts: Roboto, sans-serif;
+  --secondary-fonts: Raleway, sans-serif;
+  /* Text color */
+  --navyblue-txt-cl: #2e2f42;
+  --slate-txt-cl: #434455;
+  --iris-txt-cl: #4d5ae5;
+  --ocean-txt-cl: #404bbf;
+  --white-txt-cl: #ffffff;
+  --cloud-txt-cl: #f4f4fd;
+  --cornflower-txt-cl: #e7e9fc;
+  /* BG color */
+  --navyblue-bg-cl: #2e2f42;
+  --iris-bg-cl: #4d5ae5;
+  --ocean-bg-cl: #404bbf;
+  --cloud-bg-cl: #f4f4fd;
+  /* Others */
+}
+/*__________ Reset styles __________*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: currentColor;
+}
+/*__________ Common styles __________*/
+body {
+  font-family: var(--primary-fonts);
+  font-size: 16px;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.32px;
+  color: var(--navyblue-txt-cl);
+}
+/*__________ Basic styles __________*/
+.logo {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33; /* 133.333% */
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+  color: var(--iris-txt-cl);
+}
+.title {
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.11; /* 111.111% */
+  letter-spacing: 0.72px;
+}
+.caption {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 0.4px;
+}
+.description,
+.post-desc {
+  color: var(--slate-txt-cl);
+}
+/* Button */
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.64px;
+  color: var(--white-txt-cl);
+  background-color: var(--iris-bg-cl);
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--ocean-bg-cl);
+}
+/*__________ Header section __________*/
+.header-logo {
+  color: var(--navyblue-txt-cl);
+}
+.nav-link {
+  font-weight: 500;
+}
+.contact-link {
+  font-style: normal;
+  color: var(--slate-txt-cl);
+}
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--ocean-txt-cl);
+}
+/*__________ Hero section __________*/
+.hero,
+.footer {
+  background-color: var(--navyblue-bg-cl);
+}
+.hero-title {
+  text-align: center;
+  font-size: 56px;
+  line-height: 1.07; /* 107.143% */
+  letter-spacing: 1.12px;
+  color: var(--white-txt-cl);
+}
+/*__________ About section __________*/
+/*__________ Benefits section __________*/
+/*__________ Team section __________*/
+/*__________ Footer section __________*/
+.footer-logo {
+  color: var(--cloud-txt-cl);
+}
+.footer-description {
+  color: var(--cornflower-txt-cl);
+}
+/*__________ Portfolio section __________*/
+.portfolio .button {
+  color: var(--iris-txt-cl);
+  background-color: var(--cloud-bg-cl);
+}
+.portfolio .button:hover {
+  color: var(--white-txt-cl);
+  background-color: var(--ocean-bg-cl);
+}
