@@ -15,8 +15,12 @@
   --navyblue-bg-cl: #2e2f42;
   --iris-bg-cl: #4d5ae5;
   --ocean-bg-cl: #404bbf;
+  --white-bg-cl: #ffffff;
   --cloud-bg-cl: #f4f4fd;
+  --cornflower-bg-cl: #e7e9fc;
   /* Others */
+  --shadow-btn: rgba(0, 0, 0, 0.15);
+  --radius: 4px;
 }
 /*__________ Reset styles __________*/
 h1,
@@ -46,8 +50,28 @@ body {
   letter-spacing: 0.32px;
   color: var(--navyblue-txt-cl);
 }
+img {
+  display: block;
+}
+button {
+  cursor: pointer;
+}
 /*__________ Basic styles __________*/
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  outline: 1px solid red;
+}
 .logo {
+  display: inline-block;
   font-family: Raleway, sans-serif;
   font-size: 18px;
   font-weight: 800;
@@ -56,7 +80,11 @@ body {
   text-transform: uppercase;
   color: var(--iris-txt-cl);
 }
+.current {
+  color: var(--ocean-txt-cl);
+}
 .title {
+  margin-bottom: 72px;
   text-align: center;
   font-size: 36px;
   line-height: 1.11; /* 111.111% */
@@ -72,8 +100,15 @@ body {
 .post-desc {
   color: var(--slate-txt-cl);
 }
+.hidden-title {
+  display: none;
+}
 /* Button */
 .button {
+  min-width: 169px;
+  min-height: 56px;
+  padding: 16px 32px;
+
   font-family: inherit;
   font-size: 16px;
   font-style: normal;
@@ -82,6 +117,10 @@ body {
   letter-spacing: 0.64px;
   color: var(--white-txt-cl);
   background-color: var(--iris-bg-cl);
+
+  border: transparent;
+  border-radius: var(--radius);
+  box-shadow: 0px 4px 4px 0px var(--shadow-btn);
   cursor: pointer;
 }
 .button:hover {
@@ -106,11 +145,13 @@ body {
   color: var(--ocean-txt-cl);
 }
 /*__________ Hero section __________*/
-.hero,
-.footer {
+.hero.section {
+  padding: 188px 0;
   background-color: var(--navyblue-bg-cl);
 }
 .hero-title {
+  margin-bottom: 48px;
+
   text-align: center;
   font-size: 56px;
   line-height: 1.07; /* 107.143% */
@@ -118,21 +159,80 @@ body {
   color: var(--white-txt-cl);
 }
 /*__________ About section __________*/
+.about.section {
+  padding-bottom: 0;
+}
+.about-item {
+  width: 264px;
+}
+.about .caption,
+.team-wrapper .caption {
+  margin-bottom: 8px;
+}
 /*__________ Benefits section __________*/
 /*__________ Team section __________*/
+.team-item {
+  width: 264px;
+}
+.team-wrapper {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  text-align: center;
+  border-radius: 0px 0px 4px 4px;
+  background: var(--white-bg-cl);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
 /*__________ Footer section __________*/
-.footer-logo {
+.footer.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--navyblue-bg-cl);
+}
+.footer .logo {
+  margin-bottom: 16px;
+}
+.footer-logo-color {
   color: var(--cloud-txt-cl);
 }
 .footer-description {
+  width: 264px;
   color: var(--cornflower-txt-cl);
 }
 /*__________ Portfolio section __________*/
+.portfolio.section {
+  padding-top: 86px;
+}
 .portfolio .button {
+  min-width: 69px;
+  min-height: 48px;
+  padding: 11px 20px;
   color: var(--iris-txt-cl);
   background-color: var(--cloud-bg-cl);
+  border-radius: var(--radius);
+  border: 1px solid var(--cornflower-bg-cl);
 }
-.portfolio .button:hover {
+.portfolio .button:hover,
+.portfolio .button:active {
   color: var(--white-txt-cl);
   background-color: var(--ocean-bg-cl);
+  border-radius: var(--radius);
+  border: transparent;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.portfolio-item {
+  width: 360px;
+  margin-bottom: 48px;
+}
+.portfolio-wrapper {
+  padding: 32px 16px;
+  background-color: var(--white-bg-cl);
+  border: 1px solid var(--cornflower-bg-cl);
+  border-top: none;
+}
+.portfolio .caption {
+  margin-bottom: 8px;
 }
