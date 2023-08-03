@@ -18,7 +18,13 @@
   --white-bg-cl: #ffffff;
   --cloud-bg-cl: #f4f4fd;
   --cornflower-bg-cl: #e7e9fc;
-  --shadow-btn: rgba(0, 0, 0, 0.15);
+  /* Shadow */
+  --shadow-01: rgba(0, 0, 0, 0.1);
+  --shadow-8: rgba(0, 0, 0, 0.08);
+  --shadow-08: rgba(46, 47, 66, 0.08);
+  --shadow-12: rgba(0, 0, 0, 0.12);
+  --shadow-15: rgba(0, 0, 0, 0.15);
+  --shadow-16: rgba(46, 47, 66, 0.16);
   /* Others */
   --radius: 4px;
   --indent: 24px;
@@ -121,7 +127,7 @@ button {
   background-color: var(--iris-bg-cl);
   border: transparent;
   border-radius: var(--radius);
-  box-shadow: 0px 4px 4px 0px var(--shadow-btn);
+  box-shadow: 0px 4px 4px 0px var(--shadow-15);
   cursor: pointer;
 }
 .button:hover {
@@ -133,6 +139,7 @@ button {
   flex-wrap: wrap;
   gap: var(--indent);
 }
+/* формула для flex-сетки (портволио и т.п.) */
 .card-set-item {
   flex-basis: calc((100% - var(--indent) * var(--items) - 1)) / var(--items);
 }
@@ -225,9 +232,8 @@ button {
   text-align: center;
   border-radius: 0px 0px 4px 4px;
   background: var(--white-bg-cl);
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
+    0px 1px 6px 0px var(--shadow-08);
 }
 /*__________ Footer section __________*/
 .footer.section {
@@ -268,8 +274,8 @@ button {
   background-color: var(--ocean-bg-cl);
   border-radius: var(--radius);
   border: transparent;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
-    0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 0px var(--shadow-12), 0px 2px 1px 0px var(--shadow-8),
+    0px 3px 1px 0px var(--shadow-01);
 }
 .portfolio .card-set {
   gap: 48px 24px;
