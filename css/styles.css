@@ -71,8 +71,7 @@ button {
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
-
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 .logo {
   display: inline-block;
@@ -146,7 +145,7 @@ button {
   display: flex;
   align-items: center;
 }
-.header .logo {
+.header-logo {
   margin-right: 76px;
 }
 .header-logo-color {
@@ -209,8 +208,8 @@ button {
 .about-item {
   width: 264px;
 }
-.about .caption,
-.team-wrapper .caption {
+.about-caption,
+.team-caption {
   margin-bottom: 8px;
 }
 /*__________ Benefits section __________*/
@@ -224,7 +223,6 @@ button {
 .team-wrapper {
   padding-top: 32px;
   padding-bottom: 32px;
-
   text-align: center;
   border-radius: 0px 0px 4px 4px;
   background: var(--white-bg-cl);
@@ -238,7 +236,7 @@ button {
   padding-bottom: 100px;
   background-color: var(--navyblue-bg-cl);
 }
-.footer .logo {
+.footer-logo {
   margin-bottom: 16px;
 }
 .footer-logo-color {
@@ -287,6 +285,6 @@ button {
   border: 1px solid var(--cornflower-bg-cl);
   border-top: none;
 }
-.portfolio .caption {
+.portfolio-caption {
   margin-bottom: 8px;
 }
