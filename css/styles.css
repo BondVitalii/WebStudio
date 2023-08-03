@@ -258,7 +258,7 @@ button {
   justify-content: center;
   margin-bottom: 72px;
 }
-.portfolio .button {
+.portfolio-btn {
   min-width: 69px;
   min-height: 48px;
   padding: 11px 20px;
@@ -266,9 +266,10 @@ button {
   background-color: var(--cloud-bg-cl);
   border-radius: var(--radius);
   border: 1px solid var(--cornflower-bg-cl);
+  box-shadow: none;
 }
-.portfolio .button:hover,
-.portfolio .button:active {
+.portfolio-btn:hover,
+.portfolio-btn:active {
   color: var(--white-txt-cl);
   background-color: var(--ocean-bg-cl);
   border-radius: var(--radius);
