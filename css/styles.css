@@ -111,7 +111,6 @@ button {
   min-width: 169px;
   min-height: 56px;
   padding: 16px 32px;
-
   font-family: inherit;
   font-size: 16px;
   font-style: normal;
@@ -120,7 +119,6 @@ button {
   letter-spacing: 0.64px;
   color: var(--white-txt-cl);
   background-color: var(--iris-bg-cl);
-
   border: transparent;
   border-radius: var(--radius);
   box-shadow: 0px 4px 4px 0px var(--shadow-btn);
@@ -138,6 +136,8 @@ button {
 .card-set-item {
   flex-basis: calc((100% - var(--indent) * var(--items) - 1)) / var(--items);
 }
+/* !_________________________________________________________________________! */
+
 /*__________ Header section __________*/
 .header-container,
 .header-list,
@@ -185,7 +185,6 @@ button {
 }
 .hero-title {
   margin-bottom: 48px;
-
   text-align: center;
   font-size: 56px;
   line-height: 1.07; /* 107.143% */
@@ -214,9 +213,9 @@ button {
 }
 /*__________ Benefits section __________*/
 /*__________ Team section __________*/
-.team-item {
+/* .team-item {
   width: 264px;
-}
+} */
 .team .card-set {
   --items: 4;
 }
@@ -255,7 +254,6 @@ button {
   margin-bottom: 72px;
 }
 .portfolio .button {
-  /* display: block; */
   min-width: 69px;
   min-height: 48px;
   padding: 11px 20px;
