@@ -109,9 +109,48 @@ button {
 .post-desc {
   color: var(--slate-txt-cl);
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/** Скрываем элементы, заголовки.
+Вариант-1 (правильный)
+|============================
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+|============================
+Вариант-2 (Ярослав ментор)
+|============================
 .hidden-title {
   display: none;
 }
+|============================
+Вариант-3 (Временный в начале)
+|============================
+Ставим hidden в тег
+|============================
+*/
+
 /* Button */
 .button {
   min-width: 169px;
