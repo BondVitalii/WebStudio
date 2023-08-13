@@ -25,6 +25,7 @@
   --shadow-12: rgba(0, 0, 0, 0.12);
   --shadow-15: rgba(0, 0, 0, 0.15);
   --shadow-16: rgba(46, 47, 66, 0.16);
+  --shadow-70: rgba(46, 47, 66, 0.7);
   /* Others */
   --radius: 4px;
   --indent: 24px;
@@ -68,6 +69,13 @@ button {
 }
 /*__________ Basic styles __________*/
 .section {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   padding-top: 120px;
   padding-bottom: 120px;
 }
@@ -224,9 +232,27 @@ button {
   color: var(--ocean-txt-cl);
 }
 /*__________ Hero section __________*/
+.hero {
+  background-color: var(--navyblue-bg-cl);
+  background-image: linear-gradient(var(--shadow-70), var(--shadow-70)),
+    url(../images/hero/hero-img.jpg);
+  /** возможные варианты
+  вариант-1
+  |============================
+  background-color: var(--navyblue-bg-cl);
+  background-image: linear-gradient(var(--shadow-70), var(--shadow-70)),
+    url(../images/hero/hero-img.jpg);
+  |============================
+  вариант-2
+  |============================
+  background-color: var(--navyblue-bg-cl);
+  background-image: url(../images/hero/dark-bg.png),
+    url(../images/hero/hero-img.jpg); 
+  |============================
+  */
+}
 .hero.section {
   padding: 188px 0;
-  background-color: var(--navyblue-bg-cl);
 }
 .hero-title {
   margin-bottom: 48px;
@@ -261,6 +287,9 @@ button {
 /* .team-item {
   width: 264px;
 } */
+.team.section {
+  background-color: var(--cloud-bg-cl);
+}
 .team .card-set {
   --items: 4;
 }
