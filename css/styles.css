@@ -195,6 +195,11 @@ button {
 /* !========================================================================! */
 
 /*__________ Header section __________*/
+.header {
+  border-bottom: 1px solid var(--cornflower-bg-cl);
+  box-shadow: 0px 1px 6px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
+    0px 2px 1px 0px var(--shadow-08);
+}
 .header-container,
 .header-list,
 .header-address {
