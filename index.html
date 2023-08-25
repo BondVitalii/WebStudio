@@ -25,7 +25,7 @@
   </head>
   <body>
     <!-- Header section -->
-    <header class="header">
+    <header class="header page-header" data-header>
       <div class="header-container container">
         <a class="header-logo logo link" href="./index.html"
           >Web<span class="header-logo-color">Studio</span></a
@@ -63,7 +63,9 @@
             Effective Solutions <br />
             for Your Business
           </h1>
-          <button class="button" type="button">Order Service</button>
+          <button class="button" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!--  About us section  -->
@@ -577,5 +579,25 @@
         </div>
       </div>
     </footer>
+
+    <!--Modal-window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close-btn" type="button" data-modal-close>
+          <svg class="modal-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!------- SCRIPTS ------->
+    <!-- скрипт для динамической высоты Header (Репета) -->
+    <!-- <script src="./js/page-header.js"></script> -->
+
+    <!-- скрипт для (Header-прозрачность) Ярослав -->
+    <script src="./js/header.js"></script>
+    <!-- скрипт для (Modal-window) ДЗ -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>
