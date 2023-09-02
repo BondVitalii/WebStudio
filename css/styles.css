@@ -65,10 +65,12 @@ li {
 /*__________ Common styles __________*/
 body {
   padding-top: 76px;
+
   font-family: var(--primary-fonts);
   font-size: 16px;
   line-height: 1.5; /* 150% */
   letter-spacing: 0.32px;
+
   color: var(--navyblue-txt-cl);
 }
 img {
@@ -96,18 +98,22 @@ button {
   margin-left: auto;
   margin-right: auto;
   width: 1158px;
+
   padding-left: 15px;
   padding-right: 15px;
+
   /* outline: 1px solid red; */
 }
 .logo {
   display: inline-block;
+
   font-family: Raleway, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.33; /* 133.333% */
   letter-spacing: 0.54px;
   text-transform: uppercase;
+
   color: var(--iris-txt-cl);
 }
 .current {
@@ -116,6 +122,7 @@ button {
 .title {
   margin-bottom: 72px;
   text-align: center;
+
   font-size: 36px;
   line-height: 1.11; /* 111.111% */
   letter-spacing: 0.72px;
@@ -177,6 +184,7 @@ button {
   min-height: 56px;
 
   padding: 16px 32px;
+
   font-family: inherit;
   font-size: 16px;
   font-style: normal;
@@ -194,6 +202,7 @@ button {
   cursor: pointer;
 
   transition: background-color var(--transit);
+
   /** transition
   |============================
   transition-property: background-color;
@@ -203,7 +212,8 @@ button {
   |============================
   */
 }
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--ocean-bg-cl);
 }
 /* Card-set */
@@ -214,7 +224,6 @@ button {
 }
 
 /* формула для flex-сетки (портволио и т.п.) */
-
 .card-set-item {
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
@@ -310,16 +319,22 @@ button {
 .nav-link,
 .contact-link {
   position: relative;
+
   display: block;
   padding-top: 26px;
   padding-bottom: 26px;
+
+  transition: color var(--transit);
 }
 .header-nav {
   margin-right: auto;
 }
 .contact-link {
   font-style: normal;
+
   color: var(--slate-txt-cl);
+
+  transition: color var(--transit);
 }
 .nav-link:hover,
 .nav-link:focus,
@@ -332,10 +347,13 @@ button {
   content: '';
   position: absolute;
   bottom: 0;
+
   display: block;
   width: 100%;
   height: 4px;
+
   border-radius: 2px;
+
   background: var(--ocean-bg-cl);
   /* opacity: 0;
   transition: opacity var(--transit); */
@@ -369,14 +387,17 @@ button {
 }
 .hero-title {
   margin-bottom: 48px;
+
   text-align: center;
   font-size: 56px;
   line-height: 1.07; /* 107.143% */
   letter-spacing: 1.12px;
+
   color: var(--white-txt-cl);
 }
 .hero .button {
   display: block;
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -393,9 +414,11 @@ button {
 }
 .about-icon-wrapper {
   margin-bottom: 8px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: var(--radius);
   background-color: var(--cloud-bg-cl);
 }
@@ -438,7 +461,9 @@ button {
 .team .team-wrapper {
   padding-top: 32px;
   padding-bottom: 32px;
+
   text-align: center;
+
   border-radius: 0px 0px 4px 4px;
   background: var(--white-bg-cl);
 }
@@ -455,15 +480,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 40px;
   height: 40px;
+
   background-color: var(--iris-bg-cl);
   border-radius: 50%;
+
+  transition: background-color var(--transit);
 }
 .social-icon {
   fill: var(--cloud-bg-cl);
 }
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--ocean-bg-cl);
 }
 /*__________ Customers section  __________*/
@@ -477,25 +507,28 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 168px;
   height: 88px;
+
   border-radius: var(--radius);
   border: 1px solid var(--icon-grey-color);
   color: var(--icon-grey-color);
+
+  transition: color var(--transit), border-color var(--transit);
 }
 .customers-icon {
   fill: currentColor;
 }
 .customers-link:hover {
-  border: 1px solid var(--ocean-bg-cl);
-}
-.customers-link:hover .customers-icon {
+  border-color: var(--ocean-bg-cl);
   color: var(--ocean-bg-cl);
 }
 /*__________ Footer section __________*/
 .footer.section {
   padding-top: 100px;
   padding-bottom: 100px;
+
   background-color: var(--navyblue-bg-cl);
 }
 .footer-container {
@@ -515,6 +548,7 @@ button {
 .footer-social-title {
   margin-bottom: 16px;
   font-weight: 500;
+
   color: var(--white-txt-cl);
 }
 .footer-list {
@@ -542,6 +576,7 @@ button {
   min-width: 69px;
   min-height: 48px;
   padding: 11px 20px;
+
   color: var(--iris-txt-cl);
   background-color: var(--cloud-bg-cl);
   border-radius: var(--radius);
@@ -575,6 +610,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
 
@@ -591,12 +627,15 @@ button {
 /* подвал карточки */
 .portfolio-wrapper {
   padding: 32px 16px;
+
   background-color: var(--white-bg-cl);
   border: 1px solid var(--cornflower-bg-cl);
   border-top: none;
+
+  transition: border-color var(--transit), box-shadow var(--transit);
 }
 .portfolio-item:hover .portfolio-wrapper {
-  border: 1px solid var(--cloud-bg-cl);
+  border-color: var(--cloud-bg-cl);
   border-top: none;
   box-shadow: 0px 2px 1px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
     0px 1px 6px 0px var(--shadow-08);
@@ -624,8 +663,10 @@ button {
   width: 100%;
   height: 100%;
   |============================
-  */
+*/
 
+/** Репета
+|============================
 .backdrop {
   position: fixed;
   top: 0;
@@ -636,28 +677,127 @@ button {
   z-index: 99;
 
   background-color: var(--shadow-04);
-
   opacity: 1;
-  transition: opacity var(transit);
+  transition: opacity var(--transit);
 }
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2);
+
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  min-width: 408px;
+  min-height: 576px;
+  
+  background-color: var(--white-bg-cl);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px var(--shadow-02), 0px 1px 3px 0px var(--shadow-12),
+    0px 1px 1px 0px var(--shadow-14);
+
+  transform: translate(-50%, -50%) scale(1);
+
+
+  transition: transform var(--transit);
+}
+|============================
+*/
+
+/** Ярослав
+|============================
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+
+  background-color: var(--shadow-04);
+  transition: opacity var(transit), visibility var(transit);
+}
+
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+
+  transition-delay: 250ms;
 }
+
 .modal {
   position: absolute;
-  top: calc(50% - 288px);
-  left: calc(50% - 204px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   width: 408px;
   min-height: 576px;
 
-  border-radius: 4px;
   background-color: var(--white-bg-cl);
+  border-radius: 4px;
   box-shadow: 0px 2px 1px 0px var(--shadow-02), 0px 1px 3px 0px var(--shadow-12),
     0px 1px 1px 0px var(--shadow-14);
+
+  transition: transform var(--transit), opacity var(--transit);
+  transition-delay: 400ms;
 }
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -70%);
+  opacity: 0;
+  transition-delay: 0s;
+}
+|============================
+*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+
+  background-color: var(--shadow-04);
+  opacity: 1;
+  transition: opacity var(--transit);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2);
+}
+.modal {
+  position: absolute;
+  /* top: calc(50% - 288px);
+  left: calc(50% - 204px); */
+  top: 50%;
+  left: 50%;
+
+  width: 408px;
+  min-height: 576px;
+
+  background-color: var(--white-bg-cl);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px var(--shadow-02), 0px 1px 3px 0px var(--shadow-12),
+    0px 1px 1px 0px var(--shadow-14);
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--transit);
+}
+/* close-btn-modal */
 .modal-close-btn {
   position: absolute;
   top: 24px;
@@ -674,15 +814,16 @@ button {
   border-radius: 50%;
   background-color: var(--cornflower-bg-cl);
   border: 1px solid var(--shadow-01);
+
+  transition: color var(--transit), background-color var(--transit),
+    border-color var(--transit);
 }
 .modal-icon {
-  fill: var(--black-bg-cl);
+  fill: currentColor;
 }
-.modal-close-btn:hover {
+.modal-close-btn:hover,
+.modal-close-btn:active {
+  color: var(--white-bg-cl);
   background-color: var(--ocean-bg-cl);
-  border: transparent;
-}
-.modal-close-btn:hover .modal-icon,
-.modal-close-btn:active .modal-icon {
-  fill: var(--white-bg-cl);
+  border-color: transparent;
 }
