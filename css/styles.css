@@ -38,10 +38,50 @@
   --radius: 4px;
   --indent: 24px;
   --items: 3;
-  /* animation time */
+  /*__________ Transition time __________*/
   --transit: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+/*__________ Animations __________*/
+@keyframes title-hero-zoom {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* анимация из библиотеки animista */
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
 /*__________ Reset styles __________*/
 h1,
 h2,
@@ -56,13 +96,16 @@ li {
   padding: 0;
 }
 .list {
-  list-style: none;
+  list-style: none; /* убираем точки у стилей */
 }
 .link {
-  text-decoration: none;
-  color: currentColor;
+  text-decoration: none; /* убираем полоску под ссылкой */
+  color: currentColor; /* наследуем цвет от родителя */
 }
 /*__________ Common styles __________*/
+html {
+  scroll-behavior: smooth; /* плавный скролл Ярослав */
+}
 body {
   padding-top: 76px;
 
@@ -77,9 +120,15 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  /* Примечание
+- ставим картинке display: block; чтоб убрать нижний зазор.
+- ставим картинке max-width: 100%; чтоб была 100% ширины картинки.
+- ставим картинке height: auto; чтоб высота высчитывалась автоматически.
+*/
 }
+
 button {
-  cursor: pointer;
+  cursor: pointer; /* при наведении меняется курсор */
 }
 /*__________ Basic styles __________*/
 .section {
@@ -103,6 +152,7 @@ button {
   padding-right: 15px;
 
   /* outline: 1px solid red; */
+  /* outline: для границ блоков, удобной работы */
 }
 .logo {
   display: inline-block;
@@ -137,6 +187,7 @@ button {
 .post-desc {
   color: var(--slate-txt-cl);
 }
+/* visually-hidden для скрытия заголовков */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -179,6 +230,7 @@ button {
 */
 
 /* Button */
+/* кнопки не наследуют стили от body, прописываем их полностью */
 .button {
   min-width: 169px;
   min-height: 56px;
@@ -215,6 +267,8 @@ button {
 .button:hover,
 .button:focus {
   background-color: var(--ocean-bg-cl);
+
+  animation: vibrate-1 0.3s linear infinite both; /* анимация из библиотеки animista.net */
 }
 /* Card-set */
 .card-set {
@@ -292,6 +346,8 @@ button {
   border-bottom: 1px solid var(--cornflower-bg-cl);
   box-shadow: 0px 1px 6px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
     0px 2px 1px 0px var(--shadow-08);
+
+  transition: background-color var(--transit), backdrop-filter var(--transit);
 }
 .header.no-transparency {
   background-color: rgba(255, 255, 255, 0.8);
@@ -346,7 +402,8 @@ button {
 .nav-link.current::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  left: 0;
+  bottom: -1px;
 
   display: block;
   width: 100%;
@@ -394,6 +451,8 @@ button {
   letter-spacing: 1.12px;
 
   color: var(--white-txt-cl);
+
+  animation: title-hero-zoom 1000ms ease-out 500ms 1 alternate both;
 }
 .hero .button {
   display: block;
@@ -602,9 +661,9 @@ button {
 .portfolio-item {
   width: 360px;
 }
-.img-wrapper {
+.img-thumb {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* скрывает все что выходит за границы тумбы */
 }
 .overlay {
   position: absolute;
@@ -625,7 +684,7 @@ button {
   transform: translateY(0);
 }
 /* подвал карточки */
-.portfolio-wrapper {
+.portfolio-descr-wrapper {
   padding: 32px 16px;
 
   background-color: var(--white-bg-cl);
@@ -634,7 +693,7 @@ button {
 
   transition: border-color var(--transit), box-shadow var(--transit);
 }
-.portfolio-item:hover .portfolio-wrapper {
+.portfolio-item:hover .portfolio-descr-wrapper {
   border-color: var(--cloud-bg-cl);
   border-top: none;
   box-shadow: 0px 2px 1px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
