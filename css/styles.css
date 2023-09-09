@@ -21,19 +21,66 @@
   --cornflower-bg-cl: #e7e9fc;
   --icon-grey-color: #8e8f99;
   --green-bg-cl: #31d0aa;
+  --black-bg-cl: #000000;
   /* Shadow */
-  --shadow-01: rgba(0, 0, 0, 0.1);
   --shadow-8: rgba(0, 0, 0, 0.08);
   --shadow-08: rgba(46, 47, 66, 0.08);
+  --shadow-01: rgba(0, 0, 0, 0.1);
   --shadow-10: rgba(255, 255, 255, 0.1);
   --shadow-12: rgba(0, 0, 0, 0.12);
+  --shadow-14: rgba(0, 0, 0, 0.14);
   --shadow-15: rgba(0, 0, 0, 0.15);
   --shadow-16: rgba(46, 47, 66, 0.16);
+  --shadow-02: rgba(0, 0, 0, 0.2);
+  --shadow-04: rgba(0, 0, 0, 0.4);
   --shadow-70: rgba(46, 47, 66, 0.7);
   /* Others */
   --radius: 4px;
   --indent: 24px;
   --items: 3;
+  /*__________ Transition time __________*/
+  --transit: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*__________ Animations __________*/
+@keyframes title-hero-zoom {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* анимация из библиотеки animista */
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
 }
 /*__________ Reset styles __________*/
 h1,
@@ -49,36 +96,50 @@ li {
   padding: 0;
 }
 .list {
-  list-style: none;
+  list-style: none; /* убираем точки у стилей */
 }
 .link {
-  text-decoration: none;
-  color: currentColor;
+  text-decoration: none; /* убираем полоску под ссылкой */
+  color: currentColor; /* наследуем цвет от родителя */
 }
 /*__________ Common styles __________*/
+html {
+  scroll-behavior: smooth; /* плавный скролл Ярослав */
+}
 body {
+  padding-top: 76px;
+
   font-family: var(--primary-fonts);
   font-size: 16px;
   line-height: 1.5; /* 150% */
   letter-spacing: 0.32px;
+
   color: var(--navyblue-txt-cl);
 }
 img {
   display: block;
   max-width: 100%;
   height: auto;
+  /* Примечание
+- ставим картинке display: block; чтоб убрать нижний зазор.
+- ставим картинке max-width: 100%; чтоб была 100% ширины картинки.
+- ставим картинке height: auto; чтоб высота высчитывалась автоматически.
+*/
 }
+
 button {
-  cursor: pointer;
+  cursor: pointer; /* при наведении меняется курсор */
 }
 /*__________ Basic styles __________*/
 .section {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
   padding-top: 120px;
   padding-bottom: 120px;
 }
@@ -86,18 +147,23 @@ button {
   margin-left: auto;
   margin-right: auto;
   width: 1158px;
+
   padding-left: 15px;
   padding-right: 15px;
+
   /* outline: 1px solid red; */
+  /* outline: для границ блоков, удобной работы */
 }
 .logo {
   display: inline-block;
+
   font-family: Raleway, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.33; /* 133.333% */
   letter-spacing: 0.54px;
   text-transform: uppercase;
+
   color: var(--iris-txt-cl);
 }
 .current {
@@ -106,6 +172,7 @@ button {
 .title {
   margin-bottom: 72px;
   text-align: center;
+
   font-size: 36px;
   line-height: 1.11; /* 111.111% */
   letter-spacing: 0.72px;
@@ -120,6 +187,7 @@ button {
 .post-desc {
   color: var(--slate-txt-cl);
 }
+/* visually-hidden для скрытия заголовков */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -162,25 +230,45 @@ button {
 */
 
 /* Button */
+/* кнопки не наследуют стили от body, прописываем их полностью */
 .button {
   min-width: 169px;
   min-height: 56px;
+
   padding: 16px 32px;
+
   font-family: inherit;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5; /* 150% */
   letter-spacing: 0.64px;
+
   color: var(--white-txt-cl);
   background-color: var(--iris-bg-cl);
+
   border: transparent;
   border-radius: var(--radius);
   box-shadow: 0px 4px 4px 0px var(--shadow-15);
+
   cursor: pointer;
+
+  transition: background-color var(--transit);
+
+  /** transition
+  |============================
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  |============================
+  */
 }
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--ocean-bg-cl);
+
+  animation: vibrate-1 0.3s linear infinite both; /* анимация из библиотеки animista.net */
 }
 /* Card-set */
 .card-set {
@@ -188,17 +276,82 @@ button {
   flex-wrap: wrap;
   gap: var(--indent);
 }
+
 /* формула для flex-сетки (портволио и т.п.) */
 .card-set-item {
-  flex-basis: calc((100% - var(--indent) * var(--items) - 1)) / var(--items);
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 /* !========================================================================! */
 
 /*__________ Header section __________*/
+
+/** Настройки для Header
+Настройки для Header (Ярослав)
+|============================
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1;
+
+  background-color: var(--white-bg-cl);
+
   border-bottom: 1px solid var(--cornflower-bg-cl);
   box-shadow: 0px 1px 6px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
     0px 2px 1px 0px var(--shadow-08);
+}
+.header.no-transparency {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+-----
+1) Для Header создаем .header {} и прописываем стили в CSS.
+2) На body ставим padding-top: 76px; чтоб сдвинуть body вниз под Header.
+|============================
+
+Динамические настройки для Header с JS-скриптом (Репета)
+|============================
+.page-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 500px;
+
+  z-index: 1;
+
+  background-color: var(--white-bg-cl);
+
+  border-bottom: 1px solid var(--cornflower-bg-cl);
+  box-shadow: 0px 1px 6px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
+    0px 2px 1px 0px var(--shadow-08);
+}
+-----
+1) Подключаем скрипт с динамическими настройками Header (page-header.js).
+2) На Header ставим class="page-header".
+3) В CSS в селекторе .page-header {прописываем стили}
+|============================
+*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  background-color: var(--white-bg-cl);
+  border-bottom: 1px solid var(--cornflower-bg-cl);
+  box-shadow: 0px 1px 6px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
+    0px 2px 1px 0px var(--shadow-08);
+
+  transition: background-color var(--transit), backdrop-filter var(--transit);
+}
+.header.no-transparency {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
 }
 .header-container,
 .header-list,
@@ -221,16 +374,23 @@ button {
 }
 .nav-link,
 .contact-link {
+  position: relative;
+
   display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+
+  transition: color var(--transit);
 }
 .header-nav {
   margin-right: auto;
 }
 .contact-link {
   font-style: normal;
+
   color: var(--slate-txt-cl);
+
+  transition: color var(--transit);
 }
 .nav-link:hover,
 .nav-link:focus,
@@ -239,11 +399,31 @@ button {
 .contact-link:focus {
   color: var(--ocean-txt-cl);
 }
+.nav-link.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  border-radius: 2px;
+
+  background: var(--ocean-bg-cl);
+  /* opacity: 0;
+  transition: opacity var(--transit); */
+}
+/* .nav-link.current:hover::after {
+  opacity: 1;
+} */
 /*__________ Hero section __________*/
 .hero {
   background-color: var(--navyblue-bg-cl);
   background-image: linear-gradient(var(--shadow-70), var(--shadow-70)),
     url(../images/hero/hero-img.jpg);
+
   /** возможные варианты
   вариант-1
   |============================
@@ -264,14 +444,19 @@ button {
 }
 .hero-title {
   margin-bottom: 48px;
+
   text-align: center;
   font-size: 56px;
   line-height: 1.07; /* 107.143% */
   letter-spacing: 1.12px;
+
   color: var(--white-txt-cl);
+
+  animation: title-hero-zoom 1000ms ease-out 500ms 1 alternate both;
 }
 .hero .button {
   display: block;
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -288,9 +473,11 @@ button {
 }
 .about-icon-wrapper {
   margin-bottom: 8px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: var(--radius);
   background-color: var(--cloud-bg-cl);
 }
@@ -333,11 +520,11 @@ button {
 .team .team-wrapper {
   padding-top: 32px;
   padding-bottom: 32px;
+
   text-align: center;
+
   border-radius: 0px 0px 4px 4px;
   background: var(--white-bg-cl);
-  /* box-shadow: 0px 2px 1px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
-    0px 1px 6px 0px var(--shadow-08); */
 }
 .post-desc {
   margin-bottom: 8px;
@@ -352,15 +539,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 40px;
   height: 40px;
+
   background-color: var(--iris-bg-cl);
   border-radius: 50%;
+
+  transition: background-color var(--transit);
 }
 .social-icon {
   fill: var(--cloud-bg-cl);
 }
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--ocean-bg-cl);
 }
 /*__________ Customers section  __________*/
@@ -374,25 +566,28 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 168px;
   height: 88px;
+
   border-radius: var(--radius);
   border: 1px solid var(--icon-grey-color);
   color: var(--icon-grey-color);
+
+  transition: color var(--transit), border-color var(--transit);
 }
 .customers-icon {
   fill: currentColor;
 }
 .customers-link:hover {
-  border: 1px solid var(--ocean-bg-cl);
-}
-.customers-link:hover .customers-icon {
+  border-color: var(--ocean-bg-cl);
   color: var(--ocean-bg-cl);
 }
 /*__________ Footer section __________*/
 .footer.section {
   padding-top: 100px;
   padding-bottom: 100px;
+
   background-color: var(--navyblue-bg-cl);
 }
 .footer-container {
@@ -412,6 +607,7 @@ button {
 .footer-social-title {
   margin-bottom: 16px;
   font-weight: 500;
+
   color: var(--white-txt-cl);
 }
 .footer-list {
@@ -427,6 +623,7 @@ button {
   background-color: var(--green-bg-cl);
 }
 /*__________ Portfolio section __________*/
+/* Filter */
 .portfolio.section {
   padding-top: 86px;
 }
@@ -438,40 +635,254 @@ button {
   min-width: 69px;
   min-height: 48px;
   padding: 11px 20px;
+
   color: var(--iris-txt-cl);
   background-color: var(--cloud-bg-cl);
   border-radius: var(--radius);
   border: 1px solid var(--cornflower-bg-cl);
   box-shadow: none;
+
+  transition: color var(--transit), background-color var(--transit),
+    border-color var(--transit), box-shadow var(--transit);
 }
 .portfolio-btn:hover,
 .portfolio-btn:active {
   color: var(--white-txt-cl);
   background-color: var(--ocean-bg-cl);
   border-radius: var(--radius);
-  border: transparent;
+  border-color: transparent;
   box-shadow: 0px 2px 2px 0px var(--shadow-12), 0px 2px 1px 0px var(--shadow-8),
     0px 3px 1px 0px var(--shadow-01);
 }
+/* Gallery */
 .portfolio .card-set {
   gap: 48px 24px;
 }
 .portfolio-item {
   width: 360px;
 }
-.portfolio-wrapper {
+.img-thumb {
+  position: relative;
+  overflow: hidden; /* скрывает все что выходит за границы тумбы */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 40px 32px;
+  background-color: var(--iris-bg-cl);
+  color: var(--cornflower-txt-cl);
+
+  transform: translateY(100%);
+  transition: transform var(--transit);
+}
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+/* подвал карточки */
+.portfolio-descr-wrapper {
   padding: 32px 16px;
+
   background-color: var(--white-bg-cl);
   border: 1px solid var(--cornflower-bg-cl);
   border-top: none;
+
+  transition: border-color var(--transit), box-shadow var(--transit);
 }
-.portfolio-item:hover .portfolio-wrapper {
-  border: 1px solid var(--cloud, #f4f4fd);
+.portfolio-item:hover .portfolio-descr-wrapper {
+  border-color: var(--cloud-bg-cl);
   border-top: none;
   box-shadow: 0px 2px 1px 0px var(--shadow-08), 0px 1px 1px 0px var(--shadow-16),
     0px 1px 6px 0px var(--shadow-08);
 }
-
 .portfolio-caption {
   margin-bottom: 8px;
+}
+
+/*__________  Modal-window __________ */
+
+/** вариаты записи (размер backdrop)
+  Вариант-1
+  |============================
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  |============================
+  Вариант-2
+  |============================
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  |============================
+*/
+
+/** Репета
+|============================
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 99;
+
+  background-color: var(--shadow-04);
+  opacity: 1;
+  transition: opacity var(--transit);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2);
+
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  min-width: 408px;
+  min-height: 576px;
+  
+  background-color: var(--white-bg-cl);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px var(--shadow-02), 0px 1px 3px 0px var(--shadow-12),
+    0px 1px 1px 0px var(--shadow-14);
+
+  transform: translate(-50%, -50%) scale(1);
+
+
+  transition: transform var(--transit);
+}
+|============================
+*/
+
+/** Ярослав
+|============================
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+
+  background-color: var(--shadow-04);
+  transition: opacity var(transit), visibility var(transit);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transition-delay: 250ms;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 408px;
+  min-height: 576px;
+
+  background-color: var(--white-bg-cl);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px var(--shadow-02), 0px 1px 3px 0px var(--shadow-12),
+    0px 1px 1px 0px var(--shadow-14);
+
+  transition: transform var(--transit), opacity var(--transit);
+  transition-delay: 400ms;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -70%);
+  opacity: 0;
+  transition-delay: 0s;
+}
+|============================
+*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+
+  background-color: var(--shadow-04);
+  opacity: 1;
+  transition: opacity var(--transit);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2);
+}
+.modal {
+  position: absolute;
+  /* top: calc(50% - 288px);
+  left: calc(50% - 204px); */
+  top: 50%;
+  left: 50%;
+
+  width: 408px;
+  min-height: 576px;
+
+  background-color: var(--white-bg-cl);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px var(--shadow-02), 0px 1px 3px 0px var(--shadow-12),
+    0px 1px 1px 0px var(--shadow-14);
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--transit);
+}
+/* close-btn-modal */
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border-radius: 50%;
+  background-color: var(--cornflower-bg-cl);
+  border: 1px solid var(--shadow-01);
+
+  transition: color var(--transit), background-color var(--transit),
+    border-color var(--transit);
+}
+.modal-icon {
+  fill: currentColor;
+}
+.modal-close-btn:hover,
+.modal-close-btn:active {
+  color: var(--white-bg-cl);
+  background-color: var(--ocean-bg-cl);
+  border-color: transparent;
 }
