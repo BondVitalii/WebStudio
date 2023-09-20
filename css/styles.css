@@ -876,6 +876,8 @@ button {
 
   transition: color var(--transit), background-color var(--transit),
     border-color var(--transit);
+
+  /* cursor: pointer; */
 }
 .modal-icon {
   fill: currentColor;
