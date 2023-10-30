@@ -999,7 +999,7 @@ button {
   opacity: 0;
   fill: red;
 
-  transition: opacity var(--transit-fast);
+  transition: opacity var(--transit);
 }
 .modal-form-field:not(:placeholder-shown):focus:invalid:required
   ~ .info-icons
@@ -1078,7 +1078,15 @@ button {
 }
 .modal-form-btn.button {
   display: block;
-
   margin-right: auto;
   margin-left: auto;
+}
+/* Делаем кнопку неактивной */
+.modal-form-btn:disabled {
+  filter: grayscale(1);
+  background-color: transparent;
+  border: 1px solid var(--shadow-20);
+  color: inherit;
+
+  cursor: not-allowed; /* cursor: not-allowed; курсор неактивный, подсказка пользователю*/
 }

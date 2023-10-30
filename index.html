@@ -587,8 +587,7 @@
     </footer>
 
     <!--Modal-window -->
-    <!-- is-hidden -->
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-close-btn" type="button" data-modal-close>
           <svg class="modal-icon" width="8" height="8">
@@ -601,7 +600,7 @@
           >Leave your contacts and we will call you back
         </strong>
 
-        <form class="modal-form" name="modal-form" novalidate autocomplete="on">
+        <form class="modal-form" name="modal-form">
           <label class="modal-form-lable" for="user-name">Name</label>
           <div class="modal-form-group">
             <input
@@ -640,9 +639,9 @@
               type="tel"
               name="user-phone"
               id="user-phone"
-              placeholder="+38 099 777 77 77"
-              minlength="17"
-              maxlength="17"
+              placeholder="+380997777777"
+              minlength="13"
+              maxlength="13"
               required
               novalidate
             />
@@ -660,6 +659,9 @@
                 href="./images/icons.svg#icon-success"
               ></use>
             </svg>
+            <span class="warning-msg"
+              >Example phone number format +380997777777</span
+            >
           </div>
 
           <label class="modal-form-lable" for="user-email">Email</label>
@@ -687,6 +689,10 @@
                 class="success-icon"
                 href="./images/icons.svg#icon-success"
               ></use>
+            </svg>
+            <span class="warning-msg"
+              >Example email address example@mail.com</span
+            >
           </div>
 
           <label class="modal-form-lable" for="user-comment">Comment</label>
@@ -694,7 +700,7 @@
             class="modal-form-comment"
             name="user-comment"
             id="user-comment"
-            placeholder="Type your comment..."
+            placeholder="Text input"
             cols="30"
             rows="6"
           ></textarea>
@@ -729,8 +735,15 @@
               ></span
             >
           </label>
-
-          <button class="modal-form-btn button" type="submit">Send</button>
+          <!-- В скрипт modal.js вносим дополнение для неактивной кнопки формы -->
+          <button
+            class="modal-form-btn button"
+            type="submit"
+            disabled
+            data-modal-submit
+          >
+            Send
+          </button>
         </form>
       </div>
     </div>
