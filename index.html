@@ -589,19 +589,27 @@
 
         <div class="subscribe-form-wrapper">
           <strong class="footer-title">Subscribe</strong>
-          <form class="subscribe-form" name="subscribe-form" autocomplete="off">
-            <input
-              class="subscribe-form-input"
-              type="email"
-              name="subscribe-user-email"
-              placeholder="E-mail"
-              minlength="12"
-              novalidate
-              required
-            />
-            <!-- <span class="subscribe-warning-msg"
-              >Sample email example@mail.com</span
-            > -->
+          <form
+            class="subscribe-form"
+            name="subscribe-form"
+            novalidate
+            autocomplete="off"
+          >
+            <label>
+              <input
+                class="subscribe-form-input"
+                type="email"
+                name="subscribe-user-email"
+                placeholder="E-mail"
+                minlength="12"
+                novalidate
+                required
+              />
+              <span class="subscribe-warning-msg"
+                >Sample email example@mail.com</span
+              >
+            </label>
+
             <button class="subscribe-btn button" type="submit">
               Subscribe
               <svg class="icon-btn-subscribe" width="24" height="20">
