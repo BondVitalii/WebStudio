@@ -595,14 +595,13 @@
             novalidate
             autocomplete="off"
           >
-            <label>
+            <label class="subscribe-form-label">
               <input
                 class="subscribe-form-input"
                 type="email"
                 name="subscribe-user-email"
                 placeholder="E-mail"
                 minlength="12"
-                novalidate
                 required
               />
               <span class="subscribe-warning-msg"
@@ -638,6 +637,19 @@
         <form class="modal-form" name="modal-form" autocomplete="off">
           <label class="modal-form-lable" for="user-name">Name</label>
           <div class="modal-form-group">
+            <!-- --- -->
+            <!-- <input/> атрибуты поля 
+              --Обязательные поля.
+                -> (required) - Атрибут помечает поле формы как обязательное для заполнения. Если поле пустое, браузер выведет сообщение подсказку, а форма не будет отправлена.
+                Чтобы сделать группу радиокнопок или чекбоксов обязательной, необходимо задать атрибут required каждому элементу группы.
+              --Ограничение по длине
+                -> (minlength и maxlength) - Атрибуты накладывают ограничения на количество вводимых символов, например для пароля или имени пользователя.
+              --Ограничение значения
+                -> (min и max) - Атрибуты позволяют проверить вхождение численного значения в указанный промежуток. Могут быть использованы только в полях с типом number, range или date.
+              --Регулярное выражение
+                -> (pattern) - Атрибут позволяет указать регулярное выражение (шаблон) относительно которого будет проверяться значение поля.
+                -> (title) - По умолчанию, при ошибке валидации, браузер отобразит стандартный текст «Please match the requested format». Дополнительный текст-подсказку, который будет отображен в сообщении от браузера, можно указать в атрибуте title.-->
+            <!-- --- -->
             <input
               class="modal-form-field"
               type="text"
@@ -750,18 +762,6 @@
               required
               data-modal-checkbox
             />
-            <!-- ----- Кастомный checkbox (Дополнительный/второй вариант checkbox) ------->
-            <!-- <svg class="custom-checkbox" width="16" height="16">
-              <use
-                class="custom-checkbox-frame"
-                href="./images/icons.svg#icon-checbox"
-              ></use>
-              <use
-                class="custom-checkbox-check"
-                href="./images/icons.svg#icon-check"
-              ></use>
-            </svg> -->
-            <!-- --------------------- -->
 
             <span class="modal-form-desc"
               >I accept the terms and conditions of the
@@ -770,7 +770,7 @@
               ></span
             >
           </label>
-          <!-- В скрипт modal.js вносим дополнение для неактивной кнопки формы -->
+          <!-- data-modal-submit В скрипт modal.js вносим дополнение для неактивной кнопки формы -->
           <button
             class="modal-form-btn button"
             type="submit"
