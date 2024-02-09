@@ -511,12 +511,12 @@ button {
   color: var(--white-txt-cl);
   animation: title-hero-zoom 1000ms ease-out 500ms 1 alternate both;
 }
-.hero .button {
+.button-hero {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-.hero .button:hover {
+.button-hero:hover {
   animation: vibrate-1 0.3s linear infinite both; /* анимация из библиотеки animista.net */
 }
 /* ----- min-width: 428px ----- */
@@ -911,14 +911,8 @@ button {
   min-width: 165px;
   height: 40px;
   padding: 8px 24px;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.64px;
 }
-.icon-btn-subscribe {
+.subscribe-btn-icon {
   display: block;
 }
 /* ----- min-width: 768px ----- */
@@ -989,19 +983,24 @@ button {
 */
 /* Filter */
 .portfolio.section {
-  /* padding-top: 86px; */
   padding-top: 48px;
   padding-bottom: 48px;
 }
 .portfolio-list-filter {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* --items: 3; */
+  /* gap: var(--indent); */
+  /* row-gap: 16px; */
+  gap: 16px 24px;
   margin-bottom: 48px;
 }
 .portfolio-item-filter {
 }
 .portfolio-btn {
-  /* min-width: 69px; */
-  /* min-height: 48px; */
-  /* padding: 11px 20px; */
+  min-width: 53px;
+  min-height: 40px;
   padding: 8px 16px;
 
   color: var(--iris-txt-cl);
@@ -1017,31 +1016,41 @@ button {
 .portfolio-btn:active {
   color: var(--white-txt-cl);
   background-color: var(--ocean-bg-cl);
-
-  border-radius: var(--radius);
   border-color: transparent;
-
   box-shadow: 0px 2px 2px 0px var(--shadow-12), 0px 2px 1px 0px var(--shadow-8),
     0px 3px 1px 0px var(--shadow-01);
 }
 /* ----- min-width: 768px ----- */
 @media screen and (min-width: 768px) {
+  .portfolio.section {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
   .portfolio-list-filter {
     justify-content: center;
     margin-bottom: 64px;
   }
+  .portfolio-btn {
+    min-width: 69px;
+    min-height: 48px;
+    padding: 12px 24px;
+  }
 }
 /* ----- min-width: 1158px ----- */
 @media screen and (min-width: 1158px) {
+  .portfolio.section {
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
   .portfolio-list-filter {
     margin-bottom: 72px;
   }
 }
 
 /* Gallery */
-.portfolio .card-set {
+/* .portfolio .card-set {
   gap: 48px 24px;
-}
+} */
 .portfolio-item {
   width: 360px;
 }
@@ -1464,7 +1473,7 @@ button {
   line-height: 1.33;
   color: var(--iris-txt-cl);
 }
-.modal-form-btn.button {
+.modal-form-btn {
   display: block;
   margin-right: auto;
   margin-left: auto;
