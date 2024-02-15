@@ -1,0 +1,216 @@
+<!-- РЕПЕТА Адаптивная графика модуль-7 -->
+<!-- ================================== -->
+<!-- Дексриптор x -->
+<div class="thumb">
+  <img
+    srcset="./img/cat-320.jpg 1x, ./img/cat-640.jpg 2x, ./img/cat-960.jpg 3x"
+    src="./img/cat-320.jpg"
+    alt="Котик"
+    width="320"
+  />
+</div>
+<!-- -------------------------- -->
+<!-- Дескритор w и атрибут sizes-->
+<div class="thumb">
+  <img
+    srcset="
+      ./img/cat-320.jpg   320w,
+      ./img/cat-640.jpg   640w,
+      ./img/cat-960.jpg   960w,
+      ./img/cat-1280.jpg 1280w
+    "
+    src="./img/cat-320.jpg"
+    alt="Котик"
+    sizes="(min-width: 800px) 33vw, (min-width: 500px) 50vw, 100vw"
+  />
+</div>
+<!-- -------------------------- -->
+<!-- Отзывчивые изображения -->
+<div class="container">
+  <ul class="img-set">
+    <li class="img-set__item">
+      <img
+        srcset="
+          ./img/cat-320.jpg   320w,
+          ./img/cat-640.jpg   640w,
+          ./img/cat-960.jpg   960w,
+          ./img/cat-1280.jpg 1280w,
+          ./img/cat-1920.jpg 1920w
+        "
+        src="./img/cat-320.jpg"
+        alt="Котик"
+        sizes="
+        (min-width: 1440) 15vw, 
+        (min-width: 960px) 25vw, 
+        (min-width: 576px) 50vw, 100vw
+        "
+      />
+    </li>
+    <li class="img-set__item">
+      <img
+        srcset="
+          ./img/cat-320.jpg   320w,
+          ./img/cat-640.jpg   640w,
+          ./img/cat-960.jpg   960w,
+          ./img/cat-1280.jpg 1280w,
+          ./img/cat-1920.jpg 1920w
+        "
+        src="./img/cat-320.jpg"
+        alt="Котик"
+        sizes="(min-width: 1440) 15vw, (min-width: 960px) 25vw, (min-width: 576px) 50vw, 100vw"
+      />
+    </li>
+    <li class="img-set__item">
+      <img
+        srcset="
+          ./img/cat-320.jpg   320w,
+          ./img/cat-640.jpg   640w,
+          ./img/cat-960.jpg   960w,
+          ./img/cat-1280.jpg 1280w,
+          ./img/cat-1920.jpg 1920w
+        "
+        src="./img/cat-320.jpg"
+        alt="Котик"
+        sizes="(min-width: 1440) 15vw, (min-width: 960px) 25vw, (min-width: 576px) 50vw, 100vw"
+      />
+    </li>
+    <li class="img-set__item">
+      <img
+        srcset="
+          ./img/cat-320.jpg   320w,
+          ./img/cat-640.jpg   640w,
+          ./img/cat-960.jpg   960w,
+          ./img/cat-1280.jpg 1280w,
+          ./img/cat-1920.jpg 1920w
+        "
+        src="./img/cat-320.jpg"
+        alt="Котик"
+        sizes="(min-width: 1440) 15vw, (min-width: 960px) 25vw, (min-width: 576px) 50vw, 100vw"
+      />
+    </li>
+  </ul>
+</div>
+<!-- ----------------------------------------- -->
+<!-- Элемент picture и формат изображений webp -->
+<picture>
+  <source
+    srcset="
+      ./img/cat-320.webp 320w,
+      ./img/cat-640.webp 640w,
+      ./img/cat-960.webp 960w
+    "
+    type="image/webp"
+  />
+
+  <img
+    srcset="
+      ./img/cat-320.jpg 320w,
+      ./img/cat-640.jpg 640w,
+      ./img/cat-960.jpg 960w
+    "
+    src="./img/cat-320.jpg"
+    alt="Котик"
+    sizes="
+    (min-width: 960px) 25vw, 
+    (min-width: 576px) 50vw,  100vw"
+  />
+</picture>
+
+<!-- ЯРОСЛАВ Адаптивная графика модуль-7 -->
+<!-- ================================== -->
+<img
+  class="team-avatar"
+  srcset="
+    ./images/team/img1_370.jpg 370w,
+    ./images/team/img1_418.jpg 418w,
+    ./images/team/img1_450.jpg 450w,
+    ./images/team/img1_740.jpg 740w,
+    ./images/team/img1_836.jpg 836w,
+    ./images/team/img1_900.jpg 900w
+  "
+  sizes="
+    (min-width: 1200px) 370px, 
+    (min-width: 768px) 450px, 
+    (min-width: 480px) 418px, 100vw
+    "
+  src="./images/team/img1_450.jpg"
+  alt="John Smith extreme barber"
+  width="450"
+  height="346"
+  loading="lazy"
+/>
+<!-- Элемент picture -->
+<picture>
+  <source
+    media="(min-width: 1200px)"
+    srcset="
+      ./images/about/img-1_desk@1x.webp 1x,
+      ./images/about/img-1_desk@2x.webp 2x
+    "
+    type="image/webp"
+  />
+  <source
+    media="(min-width: 1200px)"
+    srcset="
+      ./images/about/img-1_desk@1x.jpg 1x,
+      ./images/about/img-1_desk@2x.jpg 2x
+    "
+    type="image/jpg"
+  />
+  <source
+    media="(min-width: 768px)"
+    srcset="
+      ./images/about/img-1_tab@1x.webp 1x,
+      ./images/about/img-1_tab@2x.webp 2x
+    "
+    type="image/webp"
+  />
+  <source
+    media="(min-width: 768px)"
+    srcset="
+      ./images/about/img-1_tab@1x.jpg 1x,
+      ./images/about/img-1_tab@2x.jpg 2x
+    "
+    type="image/jpg"
+  />
+  <img
+    class="about-img"
+    src="./images/about/img-1_tab@1x.jpg"
+    alt="Beard trim"
+    width="330"
+    height="235"
+    loading="lazy"
+  />
+</picture>
+<!-- ------------------------------------------ -->
+<picture>
+  <source
+    media="(min-width: 1200px)"
+    srcset="
+      ./images/gallery/photo-1_desk@1x.jpg 1x,
+      ./images/gallery/photo-1_desk@2x.jpg 2x
+    "
+  />
+  <source
+    media="(min-width: 768px)"
+    srcset="
+      ./images/gallery/photo-1_tab@1x.jpg 1x,
+      ./images/gallery/photo-1_tab@2x.jpg 2x
+    "
+  />
+  <source
+    media="(max-width: 767px)"
+    srcset="
+      ./images/gallery/photo-1_mob@1x.jpg 1x,
+      ./images/gallery/photo-1_mob@2x.jpg 2x
+    "
+  />
+  <img
+    class="gallery-img"
+    src="./images/gallery/photo-1_mob@1x.jpg"
+    alt="hairdresser doing a haircut"
+    width="418"
+    height="360"
+    loading="lazy"
+  />
+</picture>

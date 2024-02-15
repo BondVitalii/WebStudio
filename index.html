@@ -1,39 +1,10 @@
-<!-- <!DOCTYPE > - это не тег, а обязательная инструкция объявления типа документа. 
-    Она нужна для того, чтобы сообщить  браузеру в какой версии HTML написан документ.
-    По доктайпу браузер определяет версию HTML и правильно отображает страницу. Объявление типа документа должно быть самым первым что видит браузер во время обработки HTML-документа.
-    Создаем шапку документа (Ctrl + 1), (! + Enter) -->
-
 <!DOCTYPE html>
-<!-- Элементы верхнего уровня.
-  Предназначены для формирования основной структуры веб-страницы и определяют разделы заголовка и тела документа. -->
-
 <html lang="en">
-  <!--атрибут lang="en" 
-    Атрибут lang указывает на каком языке написан текст страницы. Это необходимо для ассистивных технологий, таких как скринридеры и т. п.
-    Если на странице есть текст на разных языках, для того, чтобы сделать её более доступной для ассистивных технологий, можно задавать атрибут lang не только всему документу, но и отдельным тегам.
-    <p lang="en">Operating instructions</p>
-    <p lang="fr">Manuel d'utilisation</p>-->
   <head>
-    <!-- Тег <head>
-    Предназначен для хранения служебной информации о странице: заголовок, описание, кодировку и т. д. Вся эта информация не отображается в окне браузера, однако содержит данные, которые указывают браузеру как следует обрабатывать страницу. -->
-
-    <!-- Тег <meta>
-      используется для хранения информации предназначенной для браузера и поисковых систем: установка   кодировки документа, передача информации поисковым системам и многое другое. Мета-тегов может быть несколько, потому что в зависимости от используемых атрибутов они несут различную информацию. -->
-
     <meta charset="UTF-8" />
-    <!-- utf-8 - самая распространенная кодировка.
-      Кодировку страницы необходимо указать для того, чтобы браузер корректно отобразил текст. Если этого не сделать или задать неверную кодировку, вместо символов браузер может отобразить иероглифы. -->
-
     <meta name="description" content="WebStubio site" />
-    <!-- Тег <meta name="description" content="Изучение основ HTML5 для новичков" /> Краткое описание.
-      Краткое описание содержания помогает поисковым системам лучше проиндексировать страницу. -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>WebStubio</title>
-    <!--тег <title> отображение названия на вкладке веб-браузера.
-      Текст, размещенный внутри тега <title>, отображается во вкладке браузера. Длина заголовка должна быть не более 60 символов, чтобы полностью поместиться в заголовке. Текст заголовка должен содержать краткое описание содержимого веб-страницы.-->
-
     <!------- Fonts family/Fonts styles - подключаем стили текста с сайта https://fonts.google.com ------->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,10 +13,6 @@
       rel="stylesheet"
     />
     <!------------ Modern-normalize ------------>
-    <!-- Нормализация стилей это попытка решить данную проблему путём подключения ещё одного файла стилей, 
-      в котором исправлены все возможные расхождения между таблицами стилей браузеров. То есть это техника улучшения кроссбраузерности веб-страницы - одинакового отображения и работы сайта в различных браузерах.
-      Всё, что необходимо сделать, это подключить еще один файл стилей перед всеми вашими стилями. 
-      https://github.com/sindresorhus/modern-normalize-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -64,8 +31,6 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
-  <!-- Тег <body>
- Содержит контент будущей веб-страницы. Контент, который должен отображаться на странице, следует располагать именно внутри этого тега. -->
   <body>
     <!-- Header section -->
     <header class="header page-header" data-header>
@@ -90,81 +55,96 @@
           </ul>
         </nav>
 
-        <address class="header-address">
-          <a class="contact-link link" href="mailto:info@devstudio.com"
-            >info@devstudio.com</a
-          >
-          <a class="contact-link link" href="tel:+11(000)111-11-11"
-            >+11 (000) 111-11-11</a
-          >
-        </address>
+        <ul class="contact-list list">
+          <li class="contact-item">
+            <a class="contact-link link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+          <li class="contact-item">
+            <a class="contact-link link" href="tel:+11(000)111-11-11"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+        </ul>
+
+        <button
+          class="header-hamburger-btn js-open-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="header-hamburger-icon" width="32" height="22">
+            <use href="./images/icons.svg#menu-hamburger"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
-      <!-- Тег <main>
-      Основное, не повторяющееся на других страницах сайта (уникальное), содержание. Может быть только один на странице. -->
-
       <!-- Hero section -->
+
       <section class="hero section">
         <div class="container">
           <h1 class="hero-title">
             Effective Solutions <br />
             for Your Business
           </h1>
-          <button class="button" type="button" data-modal-open>
+          <button class="button-hero button btn" type="button" data-modal-open>
             Order Service
           </button>
         </div>
       </section>
+
       <!--  About us section  -->
+
       <section class="about section">
         <div class="container">
           <h2 class="title visually-hidden">Our advantages</h2>
-          <ul class="about-list list">
-            <li class="about-item">
+          <ul class="about-list card-set list">
+            <li class="about-item card-set-item">
               <div class="about-icon-wrapper">
                 <svg class="about-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-antenna"></use>
                 </svg>
               </div>
-              <h3 class="about-caption caption">Strategy</h3>
-              <p class="description">
+              <h3 class="about-caption">Strategy</h3>
+              <p class="about-description">
                 Our goal is to identify the business problem to walk away with
                 the perfect and creative solution.
               </p>
             </li>
-            <li class="about-item">
+            <li class="about-item card-set-item">
               <div class="about-icon-wrapper">
                 <svg class="about-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-clock"></use>
                 </svg>
               </div>
-              <h3 class="about-caption caption">Punctuality</h3>
-              <p class="description">
+              <h3 class="about-caption">Punctuality</h3>
+              <p class="about-description">
                 Bring the key message to the brand's audience for the best price
                 within the shortest possible time.
               </p>
             </li>
-            <li class="about-item">
+            <li class="about-item card-set-item">
               <div class="about-icon-wrapper">
                 <svg class="about-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-diagram"></use>
                 </svg>
               </div>
-              <h3 class="about-caption caption">Diligence</h3>
-              <p class="description">
+              <h3 class="about-caption">Diligence</h3>
+              <p class="about-description">
                 Research and confirm brands that present the strongest digital
                 growth opportunities and minimize risk.
               </p>
             </li>
-            <li class="about-item">
+            <li class="about-item card-set-item">
               <div class="about-icon-wrapper">
                 <svg class="about-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-astronaut"></use>
                 </svg>
               </div>
-              <h3 class="about-caption caption">Technologies</h3>
-              <p class="description">
+              <h3 class="about-caption">Technologies</h3>
+              <p class="about-description">
                 Design practice focused on digital experiences. We bring forth a
                 deep passion for problem-solving.
               </p>
@@ -172,14 +152,21 @@
           </ul>
         </div>
       </section>
+
       <!-- Benefits section -->
-      <section class="section">
+
+      <section class="benefits section">
         <div class="container">
           <h2 class="title">What are we doing</h2>
           <ul class="card-set list">
             <li class="card-set-item img-text caption">
               <img
-                src="./images/benefits/img-1.jpg"
+                class="benefits-image"
+                srcset="
+                  ./images/benefits/benefits-img-1_desk@1x.jpg 1x,
+                  ./images/benefits/benefits-img-1_desk@2x.jpg 2x
+                "
+                src="./images/benefits/benefits-img-1_desk@1x.jpg"
                 alt="product analysis"
                 width="360"
                 height="300"
@@ -188,7 +175,12 @@
             </li>
             <li class="card-set-item img-text caption">
               <img
-                src="./images/benefits/img-2.jpg"
+                class="benefits-image"
+                srcset="
+                  ./images/benefits/benefits-img-2_desk@1x.jpg 1x,
+                  ./images/benefits/benefits-img-2_desk@2x.jpg 2x
+                "
+                src="./images/benefits/benefits-img-2_desk@1x.jpg"
                 alt="product support and development"
                 width="360"
                 height="300"
@@ -197,7 +189,12 @@
             </li>
             <li class="card-set-item img-text caption">
               <img
-                src="./images/benefits/img-3.jpg"
+                class="benefits-image"
+                srcset="
+                  ./images/benefits/benefits-img-3_desk@1x.jpg 1x,
+                  ./images/benefits/benefits-img-3_desk@2x.jpg 2x
+                "
+                src="./images/benefits/benefits-img-3_desk@1x.jpg"
                 alt="product design"
                 width="360"
                 height="300"
@@ -207,17 +204,30 @@
           </ul>
         </div>
       </section>
+
       <!-- Team section -->
+
       <section class="team section">
         <div class="container">
           <h2 class="title">Our Team</h2>
-          <ul class="card-set list">
-            <li class="card-set-item">
+          <ul class="team-list card-set list">
+            <li class="team-item card-set-item">
               <img
-                src="./images/team/employee-1.jpg"
+                class="team-employee-avatar"
+                srcset="
+                  ./images/team/team-img-1_264.jpg 264w,
+                  ./images/team/team-img-1_528.jpg 528w
+                "
+                sizes="
+                (min-width: 1158px) 264px, 
+                (min-width: 768px) 264px, 
+                (min-width: 428px) 264px, 100vw
+                "
+                src="./images/team/team-img-1_264.jpg"
                 alt="Mark Guerrero product designer"
                 width="264"
                 height="260"
+                loading="lazy"
               />
               <div class="team-wrapper">
                 <h3 class="team-caption caption">Mark Guerrero</h3>
@@ -278,12 +288,23 @@
                 </ul>
               </div>
             </li>
-            <li class="card-set-item">
+            <li class="team-item card-set-item">
               <img
-                src="./images/team/employee-2.jpg"
+                class="team-employee-avatar"
+                srcset="
+                  ./images/team/team-img-2_264.jpg 264w,
+                  ./images/team/team-img-2_528.jpg 528w
+                "
+                sizes="
+                (min-width: 1158px) 264px, 
+                (min-width: 768px) 264px, 
+                (min-width: 428px) 264px, 100vw
+                "
+                src="./images/team/team-img-2_264.jpg"
                 alt="Tom Ford frontend developer"
                 width="264"
                 height="260"
+                loading="lazy"
               />
               <div class="team-wrapper">
                 <h3 class="team-caption caption">Tom Ford</h3>
@@ -344,12 +365,23 @@
                 </ul>
               </div>
             </li>
-            <li class="card-set-item">
+            <li class="team-item card-set-item">
               <img
-                src="./images/team/employee-3.jpg"
+                class="team-employee-avatar"
+                srcset="
+                  ./images/team/team-img-3_264.jpg 264w,
+                  ./images/team/team-img-3_528.jpg 528w
+                "
+                sizes="
+                (min-width: 1158px) 264px, 
+                (min-width: 768px) 264px, 
+                (min-width: 428px) 264px, 100vw
+                "
+                src="./images/team/team-img-3_264.jpg"
                 alt="Camila Garcia marketing"
                 width="264"
                 height="260"
+                loading="lazy"
               />
               <div class="team-wrapper">
                 <h3 class="team-caption caption">Camila Garcia</h3>
@@ -410,12 +442,23 @@
                 </ul>
               </div>
             </li>
-            <li class="card-set-item">
+            <li class="team-item card-set-item">
               <img
-                src="./images/team/employee-4.jpg"
+                class="team-employee-avatar"
+                srcset="
+                  ./images/team/team-img-4_264.jpg 264w,
+                  ./images/team/team-img-4_528.jpg 528w
+                "
+                sizes="
+                (min-width: 1158px) 264px, 
+                (min-width: 768px) 264px, 
+                (min-width: 428px) 264px, 100vw
+                "
+                src="./images/team/team-img-4_264.jpg"
                 alt="Daniel Wilson ui designer"
                 width="264"
                 height="260"
+                loading="lazy"
               />
               <div class="team-wrapper">
                 <h3 class="team-caption caption">Daniel Wilson</h3>
@@ -479,12 +522,14 @@
           </ul>
         </div>
       </section>
+
       <!-- Customers section -->
+
       <section class="customers section">
         <div class="container">
           <h2 class="title">Customers</h2>
-          <ul class="card-set list">
-            <li class="card-set-item">
+          <ul class="customers-list card-set list">
+            <li class="customers-item card-set-item">
               <a
                 class="customers-link"
                 href=""
@@ -495,7 +540,7 @@
                   <use href="./images/icons.svg#icon-company-1"></use></svg
               ></a>
             </li>
-            <li class="card-set-item">
+            <li class="customers-item card-set-item">
               <a
                 class="customers-link"
                 href=""
@@ -506,7 +551,7 @@
                   <use href="./images/icons.svg#icon-company-2"></use></svg
               ></a>
             </li>
-            <li class="card-set-item">
+            <li class="customers-item card-set-item">
               <a
                 class="customers-link"
                 href=""
@@ -517,7 +562,7 @@
                   <use href="./images/icons.svg#icon-company-3"></use></svg
               ></a>
             </li>
-            <li class="card-set-item">
+            <li class="customers-item card-set-item">
               <a
                 class="customers-link"
                 href=""
@@ -528,7 +573,7 @@
                   <use href="./images/icons.svg#icon-company-4"></use></svg
               ></a>
             </li>
-            <li class="card-set-item">
+            <li class="customers-item card-set-item">
               <a
                 class="customers-link"
                 href=""
@@ -539,7 +584,7 @@
                   <use href="./images/icons.svg#icon-company-5"></use></svg
               ></a>
             </li>
-            <li class="card-set-item">
+            <li class="customers-item card-set-item">
               <a
                 class="customers-link"
                 href=""
@@ -557,6 +602,7 @@
     </main>
 
     <!-- Footer section -->
+
     <footer class="footer section">
       <div class="footer-container container">
         <div class="footer-wrapper">
@@ -627,10 +673,8 @@
           </ul>
         </div>
 
-        <!-- Form-subscribe -->
-
         <div class="subscribe-form-wrapper">
-          <strong class="footer-title">Subscribe</strong>
+          <strong class="subscribe-title footer-title">Subscribe</strong>
           <form
             class="subscribe-form"
             name="subscribe-form"
@@ -651,9 +695,9 @@
               >
             </label>
 
-            <button class="subscribe-btn button" type="submit">
+            <button class="subscribe-btn button btn" type="submit">
               Subscribe
-              <svg class="icon-btn-subscribe" width="24" height="20">
+              <svg class="subscribe-btn-icon" width="24" height="20">
                 <use href="./images/icons.svg#icon-telegram"></use>
               </svg>
             </button>
@@ -663,8 +707,8 @@
     </footer>
 
     <!--Modal-window -->
+
     <div class="backdrop is-hidden" data-modal>
-      <!-- атрибут is-hidden при перезагрузке страницы закрывает модальное окно, привязан к JS-скрипту-->
       <div class="modal">
         <button class="modal-close-btn" type="button" data-modal-close>
           <svg class="modal-icon" width="8" height="8">
@@ -680,21 +724,6 @@
         <form class="modal-form" name="modal-form" autocomplete="off">
           <label class="modal-form-lable" for="user-name">Name</label>
           <div class="modal-form-group">
-            <!-- --- -->
-            <!-- <input/> атрибуты поля 
-              --Обязательные поля.
-                -> (required) - Атрибут помечает поле формы как обязательное для заполнения. Если поле пустое, браузер выведет сообщение подсказку, а форма не будет отправлена.
-                Чтобы сделать группу радиокнопок или чекбоксов обязательной, необходимо задать атрибут required каждому элементу группы.
-              --Ограничение по длине
-                -> (minlength и maxlength) - Атрибуты накладывают ограничения на количество вводимых символов, например для пароля или имени пользователя.
-              --Ограничение значения
-                -> (min и max) - Атрибуты позволяют проверить вхождение численного значения в указанный промежуток. Могут быть использованы только в полях с типом number, range или date.
-              --Регулярное выражение
-                -> (pattern) - Атрибут позволяет указать регулярное выражение (шаблон) относительно которого будет проверяться значение поля.
-                -> (title) - По умолчанию, при ошибке валидации, браузер отобразит стандартный текст «Please match the requested format». Дополнительный текст-подсказку, который будет отображен в сообщении от браузера, можно указать в атрибуте title.
-                -- атрибут novalidate - -->
-
-            <!-- --- -->
             <input
               class="modal-form-field"
               type="text"
@@ -812,9 +841,9 @@
               ></span
             >
           </label>
-          <!-- data-modal-submit В скрипт modal.js вносим дополнение для неактивной кнопки формы -->
+
           <button
-            class="modal-form-btn button"
+            class="modal-form-btn button btn"
             type="submit"
             disabled
             data-modal-submit
@@ -825,13 +854,131 @@
       </div>
     </div>
 
-    <!------- SCRIPTS ------->
-    <!-- скрипт для динамической высоты Header (Репета) -->
-    <!-- <script src="./js/page-header.js"></script> -->
+    <!--Mobile-menu -->
 
-    <!-- скрипт для (Header-прозрачность) Ярослав -->
+    <div class="mobile menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg class="mobile-icon-close" width="8" height="8">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu">
+        <li><a class="mobile-nav-link link" href="">Studio</a></li>
+        <li><a class="mobile-nav-link link" href="">Portfolio</a></li>
+        <li><a class="mobile-nav-link link current" href="">Contacts</a></li>
+      </ul>
+
+      <ul class="contact-list list">
+        <li class="contact-item">
+          <a
+            class="mobile-email contact-link link"
+            href="mailto:info@devstudio.com"
+            >info@devstudio.com</a
+          >
+        </li>
+        <li class="contact-item">
+          <a class="mobile-tel contact-link link" href="tel:+11(000)111-11-11"
+            >+11 (000) 111-11-11</a
+          >
+        </li>
+      </ul>
+
+      <ul class="social-media-list list">
+        <li>
+          <a
+            class="social-link"
+            href="https://instagram.com"
+            aria-label="Instagram-link"
+            rel="noopener no-referrer"
+            target="_blank"
+          >
+            <svg class="social-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social-link"
+            href="https://twiter.com"
+            aria-label="Twiter-link"
+            rel="noopener no-referrer"
+            target="_blank"
+          >
+            <svg class="social-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social-link"
+            href="https://facebook.com"
+            aria-label="Facebook-link"
+            rel="noopener no-referrer"
+            target="_blank"
+          >
+            <svg class="social-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social-link"
+            href="https://linkedin.com"
+            aria-label="Linkedin-link"
+            rel="noopener no-referrer"
+            target="_blank"
+          >
+            <svg class="social-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!--========== SCRIPTS ==========-->
+
+    <!-- ! SCRIPTS libraries (скрипты из библиотек) ! -->
+    <!-- ============================================ -->
+    <!-- Скрипт из библиотеки (body-scroll-lock) для (Mobile-menu) Репета.
+      Из файла Mobile-menu https://github.com/goitacademy/mobile-menu-workshop/blob/main/index.html 
+      Для мобильного меню (блокировка скролла, чтоб небыло прокрутки сайта при открытом мобильном меню) -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- ------------------------------------------- -->
+    <!-- Скрипт из библиотеки (jsdelivr) для (Mobile-menu) Ярослав.
+      Библиотеки (jsdelivr) https://www.jsdelivr.com/package/npm/body-scroll-lock
+      Для мобильного меню (блокировка скролла, чтоб небыло прокрутки сайта при открытом мобильном меню) -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script> -->
+
+    <!-- ____________________________________________________________________________________________________________ -->
+
+    <!-- ! SCRIPTS my files (скрипты файлы в моем проекте) ! -->
+    <!-- =================================================== -->
+    <!-- Скрипт для (Header-прозрачность) Ярослав -->
     <script src="./js/header.js"></script>
-    <!-- скрипт для (Modal-window) ДЗ -->
+    <!-- --------------------------------------------------- -->
+    <!-- Скрипт для (Динамической высоты Header - Репета) -->
+    <!-- <script src="./js/page-header.js"></script> -->
+    <!-- --------------------------------------------------- -->
+    <!-- Скрипт для (Modal-window) ДЗ -->
     <script src="./js/modal.js"></script>
+    <!-- --------------------------------------------------- -->
+    <!-- Скрипт для (Mobile-menu) -->
+    <script defer src="./js/mobile-menu.js"></script>
+    <!-- взят тут (с репозитория Репеты)
+      - https://github.com/goitacademy/mobile-menCRIPTSSCRIPTS 
+      - https://github.com/goitacademy/mobile-menu-workshop/tree/main/js -->
+
+    <!-- --------------------------------------------------- -->
   </body>
 </html>
